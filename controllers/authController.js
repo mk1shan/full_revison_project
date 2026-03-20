@@ -139,8 +139,31 @@ res.status(500).json({
 
 
 
+const getMe = async (req,res)=>{
+res.status(200).json({
+  message: "current user fetched sucesfully",
+  user:{
+    id: req.user._id,
+    name:req.user.name,
+    email:req.user.email,
+
+  },
+
+})
+}
+
+
+
+
+
+
 
 module.exports = {
   registerUser,
   loginUser,
+  getMe,
 };
+
+
+
+
